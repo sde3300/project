@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.web.board.service.impl.BoardMapper" >
+
+	<select id="getList" parameterType="com.spring.web.vo.boardVO" resultType="com.spring.web.vo.boardVO">
+		<![CDATA[
+			select
+				*
+			from
+				tbl_board
+		]]>
+	</select>
+	
+	<insert id="insertBoard">
+	insert into tbl_board
+		(
+		board_title
+		,board_content
+		,board_writer
+		,board_regdate
+		)
+	values
+		(
+		#{board_title}
+		,#{board_content}
+		,#{board_writer}
+		,#{board_regdate}
+		)
+	</insert>
+	
+	<select id="getBoardContents" parameterType="java.lang.Integer" resultType="com.spring.web.vo.boardVO">
+	select
+		*
+	from
+		tbl_board
+	where
+		board_idx = #{board_idx}
+	</select>
+
+</mapper>
