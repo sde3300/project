@@ -28,4 +28,15 @@ public class BoardServiceImpl implements BoardService {
 	public boardVO getBoardContents(int board_idx) {
 		return mapper.getBoardContents(board_idx);
 	}
+
+	@Override
+	public void updateBoard(boardVO searchVO) {
+		mapper.updateBoard(searchVO);
+	}
+
+//	delete
+	@Override
+	public void getBoardDelete(int board_idx) {
+		mapper.getBoardDelete(board_idx);
+	}
 }

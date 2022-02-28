@@ -13,29 +13,56 @@
 	</select>
 	
 	<insert id="insertBoard">
-	insert into tbl_board
-		(
-		board_title
-		,board_content
-		,board_writer
-		,board_regdate
-		)
-	values
-		(
-		#{board_title}
-		,#{board_content}
-		,#{board_writer}
-		,#{board_regdate}
-		)
+	<![CDATA[
+		insert into tbl_board
+			(
+			board_title
+			,board_content
+			,board_writer
+			,board_regdate
+			)
+		values
+			(
+			#{board_title}
+			,#{board_content}
+			,#{board_writer}
+			,#{board_regdate}
+			)
+	 ]]> 
 	</insert>
 	
 	<select id="getBoardContents" parameterType="java.lang.Integer" resultType="com.spring.web.vo.boardVO">
-	select
-		*
-	from
-		tbl_board
-	where
-		board_idx = #{board_idx}
+	<![CDATA[
+		select
+			*
+		from
+			tbl_board
+		where
+			board_idx = #{board_idx}
+	 ]]> 
 	</select>
+	
+	<update id="updateBoard" parameterType="com.spring.web.vo.boardVO" >
+	<![CDATA[
+		UPDATE 
+			tbl_board 
+		SET 
+			board_title=#{board_title},
+			board_content=#{board_content},
+			board_writer=#{board_writer},
+			board_updatedate=GETDATE()
+		WHERE 
+			board_idx=#{board_idx}
+	 ]]> 
+	</update>
 
+	<delete id="getBoardDelete" parameterType="java.lang.Integer" >
+    <![CDATA[
+        delete 
+        from 
+        	tbl_board
+        where
+        	board_idx = #{board_idx}            
+    ]]>    
+	</delete>   
 </mapper>

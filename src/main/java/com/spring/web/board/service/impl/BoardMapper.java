@@ -14,4 +14,8 @@ public interface BoardMapper {
 	public void insertBoard(boardVO searchVO);
 
 	public boardVO getBoardContents(int board_idx);
+
+	public void updateBoard(boardVO searchVO);
+
+	public void getBoardDelete(int board_idx); 
 }
