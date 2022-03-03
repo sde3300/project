@@ -11,8 +11,15 @@ public class boardVO {
 	private String board_writer;
 	private String board_regdate;
 	private String board_updatedate;
+	private String searchKeyword;
 	
-	
+
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
 	public int getBoard_idx() {
 		return board_idx;
 	}
