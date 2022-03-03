@@ -3,14 +3,14 @@
 
 <mapper namespace="com.spring.web.board.service.impl.BoardMapper" >
 
-	<select id="getList" parameterType="com.spring.web.vo.boardVO" resultType="com.spring.web.vo.boardVO">
+	<!-- <select id="getList" parameterType="com.spring.web.vo.boardVO" resultType="com.spring.web.vo.boardVO">
 		<![CDATA[
 			select
 				*
 			from
 				tbl_board
 		]]>
-	</select>
+	</select> -->
 	
 	<insert id="insertBoard">
 	<![CDATA[
@@ -68,7 +68,9 @@
 	
  	<!-- 검색 -->
 	<sql id="boardWhere" >
-		<if test="searchKeyword != null and searchKeyword != '' ">
+		where 
+				1=1	
+		<if test="searchKeyword != null and searchKeyword != ''">
 			<![CDATA[ 
 			 AND 
 				( 
@@ -87,8 +89,6 @@
 				*
 			FROM
 				tbl_board
-			where 
-				1=1	
 		]]>
 		
 		<include refid="boardWhere" />

@@ -44,7 +44,7 @@ return false;
   </div>
   <!-- 검색[s] -->
   <div class="card-header py-3">
-      	<input type="text" id="searchKeyword" name="searchKeyworfdd" value="${searchVO.searchKeyword}" 
+      	<input type="text" id="searchKeyword" name="searchKeyword" value="${searchVO.searchKeyword}" 
      	 style="width:300px; height:40px;" placeholder="검색어를 입력하세요." />
 		<a href="#" onclick="fn_search();" class="btn btn-primary">검색</a>
   </div>
