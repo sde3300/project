@@ -17,4 +17,7 @@ public interface BoardService {
 	
 //	delete
 	void getBoardDelete(int board_idx);
+	
+//	페이징
+	int getListCnt(boardVO searchVO);
 }

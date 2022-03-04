@@ -94,4 +94,13 @@
 		<include refid="boardWhere" />
 	</select> 
 	
+	<!-- 페이징 -->
+	<select id="getListCnt" parameterType="com.spring.web.vo.boardVO" resultType="java.lang.Integer">
+		select
+			count(*)
+		from
+			tbl_board
+		<include refid="boardtWhere"/>	
+	</select>
+	
 </mapper>

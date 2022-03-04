@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.web.board.service.BoardService;
+import com.spring.web.vo.Pagination;
 import com.spring.web.vo.boardVO;
 
 @Controller
@@ -45,7 +46,6 @@ public class BoardController {
 	public String create_action(@ModelAttribute("searchVO") boardVO searchVO, RedirectAttributes redirect) {
 		
 		try {
-			
 			SimpleDateFormat format1 = new SimpleDateFormat ("yyyy-MM-dd");
 			Date time = new Date();
 			String time1 = format1.format(time);
@@ -121,7 +121,7 @@ public class BoardController {
 		
 		return "redirect:/board/list";
 	}
-		
+	
 }
 	
 	

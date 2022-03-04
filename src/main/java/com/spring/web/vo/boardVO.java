@@ -3,7 +3,7 @@ package com.spring.web.vo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class boardVO {
+public class boardVO extends PageVO {
 	
 	private int board_idx;
 	private String board_title;
@@ -56,5 +56,15 @@ public class boardVO {
 	public void setBoard_updatedate(String board_updatedate) {
 		this.board_updatedate = board_updatedate;
 	}
+	
+	private String qustr;
+	
+	public String getQustr() {
+		return qustr;
+	}
+	public void setQustr(String qustr) {
+		this.qustr = qustr;
+	}
+	
 
 }
