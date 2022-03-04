@@ -208,15 +208,30 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Alerts -->
+						<!-- 회원가입, 로그인 버튼 -->
+						<a href="${pageContext.request.contextPath}/account/login" class="btn btn-primary btn-icon-split" style="width:auto; height:50px; margin-top:10px; margin-right:5px; text-align:center;">
+						    <span class="icon text-white-50">
+						        <i class="fas fa-flag"></i>
+						    </span>
+						    <span class="text">로그인</span>
+						</a>
+						<a href="${pageContext.request.contextPath}/account/register" class="btn btn-success btn-icon-split" style="width:auto; height:50px; margin-top:10px;">
+						    <span class="icon text-white-50">
+						        <i class="fas fa-check"></i>
+						    </span>
+						    <span class="text">회원가입</span>
+						</a>
+						<!-- 회원가입, 로그인 버튼 끝 -->
+
+                        <!-- Nav Item - Alerts 
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
+                                <!-- Counter - Alerts
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
-                            <!-- Dropdown - Alerts -->
+                            Dropdown - Alerts
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
@@ -259,15 +274,15 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Messages -->
+                        Nav Item - Messages
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
+                                Counter - Messages
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
-                            <!-- Dropdown - Messages -->
+                            Dropdown - Messages
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
@@ -323,7 +338,7 @@
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
-                        </li>
+                        </li> -->
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 

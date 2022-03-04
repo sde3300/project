@@ -51,7 +51,7 @@
     <!-- mapper 위치 명시해주기  -->
     <mybatis-spring:scan base-package="com.spring.web.board.service.impl" />
     <context:component-scan base-package="com.spring.web.board.service.impl" />
-    <context:component-scan base-package="com.spring.web.vo" />
+    <context:component-scan base-package="com.spring.web" />
 
     <!--INFO TRANSACTION MANAGER PROPERTY BEANS START -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" />	   
