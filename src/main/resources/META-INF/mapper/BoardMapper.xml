@@ -90,8 +90,11 @@
 			FROM
 				tbl_board
 		]]>
-		
-		<include refid="boardWhere" />
+		<include refid="boardtWhere"/>
+		<![CDATA[			
+			Order by board_idx desc
+			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+		]]>
 	</select> 
 	
 	<!-- 페이징 -->

@@ -41,6 +41,7 @@ public class Pagination {
 	private boolean xnext;		//다음버튼
 	
 
+	// 페이지 리스트의 첫 페이지 번호
 	public int getFirstPageNoOnPageList() {
 		lastPageNoOnPageList = (int)(Math.ceil(currentPageNo/10.0)) * 10;
 		
@@ -52,6 +53,7 @@ public class Pagination {
 		this.firstPageNoOnPageList = firstPageNoOnPageList;
 	}
 	
+	// 페이지 리스트의 마지막 페이지 번호
 	public int getLastPageNoOnPageList() {
 		lastPageNoOnPageList = (int)(Math.ceil(getCurrentPageNo()/10.0)) * 10;
 		
@@ -69,6 +71,7 @@ public class Pagination {
 		this.lastPageNoOnPageList = lastPageNoOnPageList;
 	}
 	
+	// 페이지 sql의 조건절에 사용되는 시작 rownumber
 	public int getFirstRecordIndex() {
 		firstRecordIndex = (getCurrentPageNo() - 1) * getRecordCountPerPage();
 		return firstRecordIndex;
@@ -78,6 +81,7 @@ public class Pagination {
 		this.firstRecordIndex = firstRecordIndex;
 	}
 	
+	// 이전 버튼
 	public boolean getXprev() {
 		xprev= getFirstPageNoOnPageList() > 1;
 		return xprev;
@@ -87,6 +91,7 @@ public class Pagination {
 		this.xprev = xprev;
 	}
 	
+	// 다음 버튼
 	public boolean getXnext() {
 		
 		int realEnd = (int)(Math.ceil((getTotalRecordCount() * 1.0) / getRecordCountPerPage()));
@@ -99,6 +104,7 @@ public class Pagination {
 		this.xnext = xnext;
 	}
 	
+	//페이징 마지막 숫자
 	public int getRealEnd() {
 		
 		realEnd = (int)(Math.ceil((getTotalRecordCount() * 1.0) / getRecordCountPerPage()));

@@ -1,5 +1,7 @@
 package com.spring.web.vo;
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,15 +13,9 @@ public class boardVO extends PageVO {
 	private String board_writer;
 	private String board_regdate;
 	private String board_updatedate;
-	private String searchKeyword;
+	private String qustr;
 	
 
-	public String getSearchKeyword() {
-		return searchKeyword;
-	}
-	public void setSearchKeyword(String searchKeyword) {
-		this.searchKeyword = searchKeyword;
-	}
 	public int getBoard_idx() {
 		return board_idx;
 	}
@@ -56,15 +52,14 @@ public class boardVO extends PageVO {
 	public void setBoard_updatedate(String board_updatedate) {
 		this.board_updatedate = board_updatedate;
 	}
-	
-	private String qustr;
-	
 	public String getQustr() {
 		return qustr;
 	}
-	public void setQustr(String qustr) {
-		this.qustr = qustr;
+	public void setQustr() throws UnsupportedEncodingException {
+	  	String qs = "";
+	  	this.setQueryString();
+	  	qs += this.getQueryString();
+	  	this.qustr = qs;
 	}
-	
 
 }

@@ -40,7 +40,7 @@ public class BoardServiceImpl implements BoardService {
 		mapper.getBoardDelete(board_idx);
 	}
 	
-//	검색
+//	페이징
 	@Override
 	public int getListCnt(boardVO searchVO) {
 		return mapper.getListCnt(searchVO);

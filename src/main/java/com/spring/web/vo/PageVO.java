@@ -17,6 +17,8 @@ public class PageVO {
 		
 	private boolean prev, next;	    			//이전,다음버튼
 
+	
+//	getter&setter
 	public int getPageIndex() {
 		return pageIndex;
 	}
@@ -106,13 +108,21 @@ public class PageVO {
 	}
 	
 	//검색
-	  private String searchKeyword = "";
-	  
-	  //QueryString
-	  private String queryString = "";
-	  
-	  
-	  public void setQueryString() throws UnsupportedEncodingException {
+	private String searchKeyword = "";
+  
+	//QueryString
+	private String queryString = "";
+  
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+	public String getQueryString() {
+		return queryString;
+	}
+	public void setQueryString() throws UnsupportedEncodingException {
 		String qs = "";
 		qs += "&searchKeyword="+URLEncoder.encode(this.searchKeyword, "UTF-8");
 		qs += "&pageIndex="+this.pageIndex;
@@ -120,6 +130,8 @@ public class PageVO {
 		this.queryString = qs;
 		
 	}
+
+
 
 	
 }
