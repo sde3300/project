@@ -3,7 +3,7 @@
 
 <mapper namespace="com.spring.web.board.service.impl.BoardMapper" >
 
-	<!-- <select id="getList" parameterType="com.spring.web.vo.boardVO" resultType="com.spring.web.vo.boardVO">
+<!-- 	<select id="getList" parameterType="com.spring.web.vo.boardVO" resultType="com.spring.web.vo.boardVO">
 		<![CDATA[
 			select
 				*
@@ -67,7 +67,7 @@
 	</delete>   
 	
  	<!-- 검색 -->
-	<sql id="boardWhere" >
+	<sql id="boardtWhere" >
 		where 
 				1=1	
 		<if test="searchKeyword != null and searchKeyword != ''">
@@ -79,9 +79,7 @@
 				 )  
 			 ]]> 
 		</if>
-		
 	</sql> 
-		
 		
 	<select id="getList" parameterType="com.spring.web.vo.boardVO" resultType="com.spring.web.vo.boardVO">
 		<![CDATA[
@@ -93,7 +91,8 @@
 		<include refid="boardtWhere"/>
 		<![CDATA[			
 			Order by board_idx desc
-			LIMIT #{recordCountPerPage} OFFSET #{firstIndex}
+			OFFSET #{firstIndex} ROWS
+			FETCH NEXT #{recordCountPerPage} ROWS ONLY
 		]]>
 	</select> 
 	

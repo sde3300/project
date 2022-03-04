@@ -20,7 +20,9 @@ function fn_search(){
 $("#listForm").submit();
 return false;
 }
+</script>
 
+<script type="text/javascript">
 /* 페이징 */
 function fn_go_page(pageNo) {
 	$("#pageIndex").val(pageNo);
@@ -41,10 +43,7 @@ $(document).ready(function() {
 	});
 
 	});
-
-
 </script>
-
 
 <%@include file="../includes/header.jsp" %>
 
@@ -66,16 +65,14 @@ $(document).ready(function() {
   <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
   </div>
-  <!-- 검색[s] -->
-  <div class="card-header py-3">
-      	<input type="text" id="searchKeyword" name="searchKeyword" value="${searchVO.searchKeyword}" 
-     	 style="width:300px; height:40px;" placeholder="검색어를 입력하세요." />
+	<!-- 검색[s] -->
+		<div class="card-header py-3">
+		    <input type="text" id="searchKeyword" name="searchKeyword" value="${searchVO.searchKeyword}" style="width:300px; height:40px;" placeholder="검색어를 입력하세요." />
 		<a href="#" onclick="fn_search();" class="btn btn-primary">검색</a>
-  </div>
-  <!-- 검색[e] -->
+		</div>
+	<!-- 검색[e] -->
 
 <span>총게시물 ${totCnt} / 페이지 (${searchVO.pageIndex} / ${totalPageCnt})</span>
-</div></div>
 
 <table class="table table-bordered" width="100%" cellspacing="0" style="text-align:center;">
   <thead>
@@ -100,7 +97,6 @@ $(document).ready(function() {
   </c:forEach>
   </tbody>
 </table>
-
 <!-- Paging[s] -->
 
 <div class="col-sm-12 col-md-7" style="text-align:right">
@@ -124,7 +120,10 @@ $(document).ready(function() {
 			</li>
 			</c:if>
 		</ul>
+		<a href="/board/create" class="btn btn-primary float-left">등록</a>
 	</div>
+</div>
+</div>
 </div>
 <!-- Paging[e] -->
 

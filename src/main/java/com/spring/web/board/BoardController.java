@@ -1,6 +1,8 @@
 package com.spring.web.board;
 
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -83,6 +85,30 @@ public String read(@ModelAttribute("searchVO") boardVO searchVO, @RequestParam("
 	searchVO.setQustr();
 	
 	return "/board/read";
+}
+
+// 등록
+@RequestMapping(value = "/board/create", method = RequestMethod.GET)
+public String create(@ModelAttribute("searchVO") boardVO searchVO, Model model) {
+	
+	
+	return "/board/create";
+}
+@RequestMapping(value = "/board/create_action", method = RequestMethod.POST)
+public String create_action(@ModelAttribute("searchVO") boardVO searchVO, RedirectAttributes redirect) {
+	
+	SimpleDateFormat format1 = new SimpleDateFormat ("yyyy-MM-dd");
+			
+	Date time = new Date();
+			
+	String time1 = format1.format(time);
+	searchVO.setBoard_regdate(time1);
+	
+	boardService.insertBoard(searchVO);
+	
+	redirect.addFlashAttribute("redirect", searchVO.getBoard_idx());
+	
+	return "redirect:/board/list";
 }
 
 @RequestMapping(value = "/board/update", method = RequestMethod.GET)
