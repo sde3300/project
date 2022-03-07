@@ -105,4 +105,44 @@
 		<include refid="boardtWhere"/>	
 	</select>
 	
+	<!-- 회원가입 -->
+	<select id="getIdCnt" parameterType="com.spring.web.vo.memberVO" resultType="java.lang.Integer">
+<![CDATA[
+	select
+		count(*)
+	from
+		tbl_member
+	where
+		me_id = #{me_id}
+]]>	
+</select>
+
+<insert id="insertMember">
+	insert into tbl_member
+		(
+		me_name
+		,me_id
+		,me_pwd
+		,me_auth
+		,me_email
+		,me_tel
+		,me_latest_login
+		,me_delete_yn
+		,me_id_yn
+		,me_regdate
+		)
+	values
+		(
+		#{me_name}
+		,#{me_id}
+		,#{me_pwd}
+		,#{me_auth}
+		,#{me_email}
+		,#{me_tel}
+		,#{me_latest_login}
+		,#{me_delete_yn}
+		,#{me_id_yn}
+		,#{me_regdate}
+		)
+</insert>
 </mapper>
